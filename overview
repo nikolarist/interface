@@ -1,0 +1,7 @@
+Alignment link
+https://www.bioinfo.mpg.de/AlignMe/work/220325_75693/aligned_sequences_220325_75693.aln
+https://www.bioinfo.mpg.de/AlignMe/work/220325_78403/aligned_sequences_0_0_220325_78403.als
+
+
+Python server (w/o server local files cant be read for reasons beyond my comprehension)
+python3 -m http.server
