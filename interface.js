@@ -1,22 +1,12 @@
-function generateInterface() {
+function generateInterface(listFile) {
 
     $("#interfaceBtn").css("display", "none")
-
-    files = ["aligned_sequences_0_0_220325_78403.als", "aligned_sequences_0_0_220325_79438.als"]
-
-    file_dropdown = "<select id='fileDropdown' onchange='changeSeqSelection()'>\n"
-    for (let i = 0; i < files.length; i++) {
-        file_dropdown += `<option value='${files[i]}'>${files[i]}</option>\n`;
-    }
-    file_dropdown += "</select>"
-
-
-
 
     s = `
     <form id="box" action="https://proteinformatics.uni-leipzig.de/voronoia/test" method="post">
         Alignment <br>
-        ${file_dropdown}
+        
+        <select id='fileDropdown' onchange='changeSeqSelection()'></select>
         <br>
         <br>
         <br>
@@ -57,6 +47,17 @@ function generateInterface() {
     </form>
     `;
     $("#box").append(s);
+
+
+    // add alignments to dropdown
+    fetch(listFile)
+        .then(response => response.text())
+        .then(text => text.split("\n"))
+        .then(files => {
+            for (let i = 0; i < files.length; i++) {
+                $("#fileDropdown").append(`<option value='${files[i]}'>${files[i]}</option>`);
+            }
+        });
 
 
 
