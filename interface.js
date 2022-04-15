@@ -3,7 +3,7 @@ function generateInterface(listFile) {
     $("#interfaceBtn").css("display", "none")
 
     s = `
-    <form id="box" action="https://proteinformatics.uni-leipzig.de/voronoia/test" method="post">
+    <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post">
         Alignment <br>
         
         <select id='fileDropdown' onchange='changeSeqSelection()'></select>
