@@ -1,6 +1,62 @@
+// generate interface for conservation
 function generateInterface(listFile) {
 
     $("#interfaceBtn").css("display", "none")
+
+    s = `
+    <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post">
+        Alignment <br>
+        
+        <select id='fileDropdown' onchange='changeSeqSelection()'></select>
+        <br>
+        <br>
+        <br>
+
+        Upload a PDB <br>
+
+        <select id="seq"></select> <br>
+        <br>
+
+        <input id="pdbConv" name="pdb_conv" type="text" placeholder="pdb id" onchange='clearInput("#fileConv")'> <br>
+        <input id="fileConv" name="file_conv" type="file" accept=".pdb" onchange='clearInput("#pdbConv")'>
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <input type="submit">
+    </form>
+    `;
+    $("#box").append(s);
+
+
+    // add alignments to dropdown
+    fetch(listFile)
+        .then(response => response.text())
+        .then(text => text.split("\n"))
+        .then(files => {
+            for (let i = 0; i < files.length; i++) {
+                $("#fileDropdown").append(`<option value='${files[i]}'>${files[i]}</option>`);
+            }
+        });
+
+
+
+    changeSeqSelection()
+
+}
+
+
+
+
+// generate interface for superimpose
+function superInterface(listFile) {
+
+    $("#superBtn").css("display", "none") // TODO: change id
 
     s = `
     <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post">
@@ -46,7 +102,7 @@ function generateInterface(listFile) {
         <input type="submit">
     </form>
     `;
-    $("#box").append(s);
+    $("#superbox").append(s);
 
 
     // add alignments to dropdown
@@ -55,15 +111,19 @@ function generateInterface(listFile) {
         .then(text => text.split("\n"))
         .then(files => {
             for (let i = 0; i < files.length; i++) {
-                $("#fileDropdown").append(`<option value='${files[i]}'>${files[i]}</option>`);
+                fsplit = '${files[i]}'.split("/");
+                filename = fsplit[fsplit.length - 1];
+                $("#fileDropdown").append(`<option value='${filename}'>${files[i]}</option>`);
             }
         });
 
 
 
     changeSeqSelection()
-
 }
+
+
+
 
 function clearInput(el) {
     $(el).val("");
