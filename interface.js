@@ -7,7 +7,7 @@ function generateInterface(listFile) {
     <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post" enctype="multipart/form-data">
         Alignment <br>
         
-        <select id='fileDropdownConv' onchange='changeSeqSelectionConv()'></select>
+        <select id='fileDropdownConv' name='alignment_link' onchange='changeSeqSelectionConv()'></select>
         <br>
         <br>
         <br>
