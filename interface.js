@@ -5,7 +5,8 @@ function generateInterface(listFile) {
 
     s = `
     <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post" enctype="multipart/form-data">
-        Alignment <br>
+
+        Select alignment <br>
         
         <select id='fileDropdownConv' name='alignment_link' onchange='changeSeqSelectionConv()'></select>
         <br>
@@ -19,7 +20,7 @@ function generateInterface(listFile) {
         <br>
 
 
-        Upload a second PDB (optional) <br>
+        Upload a second PDB (optional, structures get aligned/superimposed) <br>
 
         <input id="fileSuper" name="file_super" type="file" accept=".pdb">
         <br>
