@@ -41,7 +41,7 @@ function generateInterface(listFile) {
             for (let i = 0; i < files.length; i++) {
                 fsplit = `${files[i]}`.split("/");
                 filename = fsplit[fsplit.length - 1];
-                $("#fileDropdownConv").append(`<option value='${files[i]}'>${filename}</option>`);
+                $("#fileDropdownConv").append(`<option value='${filename}'>${filename}</option>`);
             }
         });
 
