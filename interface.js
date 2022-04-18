@@ -4,8 +4,7 @@ function generateInterface(listFile) {
     $("#interfaceBtn").css("display", "none")
 
     s = `
-    <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post" enctype="multipart/form-data">
-
+    <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post" enctype="multipart/form-data" target="_blank">
         Select alignment <br>
         
         <select id='fileDropdownConv' name='alignment_link' onchange='changeSeqSelectionConv()'></select>
