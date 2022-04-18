@@ -17,16 +17,16 @@ function generateInterface(listFile) {
 
         Upload a PDB <br>
 
-        <input id="pdbConv" name="pdb_conv" type="text" placeholder="pdb id"><br>
-        <input id="fileConv" name="file_conv" type="file" accept=".pdb">
+        <input id="pdbConv" name="pdb_conv" type="text" placeholder="pdb id" onchange="clearInput('#fileConv')" required><br>
+        <input id="fileConv" name="file_conv" type="file" accept=".pdb" onchange="clearInput('#pdbConv')" required>
         <br>
         <br>
 
 
         Upload a second PDB (optional, structures get aligned/superimposed) <br>
 
-        <input id="pdbSuper" name="pdb_super" type="text" placeholder="pdb id"><br>
-        <input id="fileSuper" name="file_super" type="file" accept=".pdb">
+        <input id="pdbSuper" name="pdb_super" type="text" placeholder="pdb id" onchange="clearInput('#fileSuper')"><br>
+        <input id="fileSuper" name="file_super" type="file" accept=".pdb" onchange="clearInput('#pdbSuper')">
         <br>
         <br>
 
@@ -56,14 +56,27 @@ function generateInterface(listFile) {
 
     //changeSeqSelectionConv()
 
+
+    var $inputs = $('input[name=pdb_conv],input[name=file_conv]');
+    $inputs.on('input', function () {
+        // Set the required property of the other input to false if this input is not empty.
+        $inputs.not(this).prop('required', !$(this).val().length);
+    });
 }
 
 
-var $inputs = $('input[name=pdb_conv],input[name=file_conv]');
-$inputs.on('input', function () {
-    // Set the required property of the other input to false if this input is not empty.
-    $inputs.not(this).prop('required', !$(this).val().length);
-});
+
+
+function clearInput(el) {
+    $(el).val("");
+} 
+
+
+
+
+
+
+
 
 
 
