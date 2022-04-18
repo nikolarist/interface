@@ -4,6 +4,8 @@ function generateInterface(listFile) {
     $("#interfaceBtn").css("display", "none")
 
     s = `
+    <br>
+    <br>
     <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post" enctype="multipart/form-data" target="_blank">
 
         Select alignment <br>
@@ -15,13 +17,15 @@ function generateInterface(listFile) {
 
         Upload a PDB <br>
 
-        <input id="fileConv" name="file_conv" type="file" accept=".pdb" required>
+        <input id="pdbConv" name="pdb_conv" type="text" placeholder="pdb id"><br>
+        <input id="fileConv" name="file_conv" type="file" accept=".pdb">
         <br>
         <br>
 
 
         Upload a second PDB (optional, structures get aligned/superimposed) <br>
 
+        <input id="pdbSuper" name="pdb_super" type="text" placeholder="pdb id"><br>
         <input id="fileSuper" name="file_super" type="file" accept=".pdb">
         <br>
         <br>
