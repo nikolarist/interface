@@ -5,9 +5,11 @@ function generateInterface(listFile) {
 
     s = `
     <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post" enctype="multipart/form-data" target="_blank">
+
         Select alignment <br>
         
         <select id='fileDropdownConv' name='alignment_link' onchange='changeSeqSelectionConv()'></select>
+        <br>
         <br>
         <br>
 
@@ -25,6 +27,7 @@ function generateInterface(listFile) {
         <br>
 
         Uploading a single PDB may take up to 20 seconds, uploading two PDBs up to 1 minute.
+        <br>
         <br>
 
         <input type="submit">
