@@ -13,7 +13,7 @@ function generateInterface(listFile) {
 
         Upload a PDB <br>
 
-        <input id="fileConv" name="file_conv" type="file" accept=".pdb">
+        <input id="fileConv" name="file_conv" type="file" accept=".pdb" required>
         <br>
         <br>
 
