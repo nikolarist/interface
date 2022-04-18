@@ -11,7 +11,6 @@ function generateInterface(listFile) {
         <select id='fileDropdownConv' name='alignment_link' onchange='changeSeqSelectionConv()'></select>
         <br>
         <br>
-        <br>
 
         Upload a PDB <br>
 
@@ -25,6 +24,8 @@ function generateInterface(listFile) {
         <input id="fileSuper" name="file_super" type="file" accept=".pdb">
         <br>
         <br>
+
+        Uploading a single PDB may take up to 20 seconds, uploading two PDBs up to 1 minute.
         <br>
 
         <input type="submit">
