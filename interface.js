@@ -6,32 +6,30 @@ function generateInterface(listFile) {
     s = `
     <br>
     <br>
-    <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post" enctype="multipart/form-data" target="_blank">
+    <form id="box" action="http://proteinformatics.uni-leipzig.de/mutation_explorer/submit" method="post" enctype="multipart/form-data" target="_blank" style="margin-left: 20px">
 
         Select alignment <br>
         
         <select id='fileDropdownConv' name='alignment_link' onchange='changeSeqSelectionConv()'></select>
         <br>
         <br>
-        <br>
 
-        Upload a PDB <br>
+        <!-- Upload a PDB <br> -->
+        Provide a Protein Data Bank identifier (4 characters) or upload a coordinate file <br>
 
-        <input id="pdbConv" name="pdb_conv" type="text" placeholder="pdb id" onchange="clearInput('#fileConv')" required><br>
+        <input id="pdbConv" name="pdb_conv" type="text" placeholder="Enter PDB ID" onchange="clearInput('#fileConv')" required><br>
         <input id="fileConv" name="file_conv" type="file" accept=".pdb" onchange="clearInput('#pdbConv')" required>
         <br>
-        <br>
 
 
-        Upload a second PDB (optional, structures get aligned/superimposed) <br>
+        <!-- Upload a second PDB (optional, structures get aligned/superimposed) <br> -->
+        Provide a second identifier or select a file for upload (optional, structures will be superposed) <br>
 
-        <input id="pdbSuper" name="pdb_super" type="text" placeholder="pdb id" onchange="clearInput('#fileSuper')"><br>
+        <input id="pdbSuper" name="pdb_super" type="text" placeholder="Enter PDB ID" onchange="clearInput('#fileSuper')"><br>
         <input id="fileSuper" name="file_super" type="file" accept=".pdb" onchange="clearInput('#pdbSuper')">
-        <br>
         <br>
 
         Uploading a single PDB may take up to 20 seconds, uploading two PDBs up to 1 minute.
-        <br>
         <br>
 
         <input type="submit">
