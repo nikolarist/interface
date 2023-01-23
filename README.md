@@ -20,13 +20,13 @@ The interface will create a list containing: 'alignment1.clw', 'alignment2.clw',
 
 The HTML of the alignment server has to contain the following lines:
 
-<pre>
+<code>
 <button id="interfaceBtn" onclick="generateInterface('alignments.txt')">MutationExplorer</button>
 <div id="box"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="interface.js"></script>
-</pre>
+</code>
 
 This will create a button 'MutationExplorer' that opens a small form when clicked.
 
