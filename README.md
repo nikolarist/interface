@@ -23,7 +23,7 @@ The HTML of the alignment server has to contain the following lines:
 <pre>
 &lt;button id="interfaceBtn" onclick="generateInterface('alignments.txt')">MutationExplorer&lt;/button>
 
-&lt;div id="box"></div>
+&lt;div id="box">&lt;/div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nikolarist/interface@latest/interface.js" ></script>
