@@ -10,19 +10,23 @@ The interface then allows the user to select one of the alignments to be forward
 
 The alignment creating server has to write a file 'alignments.txt' that contains the URL of every alignment that the user can select.
 Example:
+<pre>
 https://SERVERNAME/SUB/alignment1.clw
 https://SERVERNAME/SUB/alignment2.clw
 ...
+</pre>
 
 The interface will create a list containing: 'alignment1.clw', 'alignment2.clw', ...
 
 The HTML of the alignment server has to contain the following lines:
 
+<pre>
 <button id="interfaceBtn" onclick="generateInterface('alignments.txt')">MutationExplorer</button>
 <div id="box"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="interface.js"></script>
+</pre>
 
 This will create a button 'MutationExplorer' that opens a small form when clicked.
 
